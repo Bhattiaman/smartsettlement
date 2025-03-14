@@ -1,10 +1,12 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-
+import final from "../assets/final.png";
+import "../styles/header_logo.scss";
+import final_logo from "../assets/final_logo.png";
 const Header = ({ setMenuOpen, menuOpen }) => {
   return (
     <>
-      <nav>
+      <nav className="navContainer">
         <NavContent setMenuOpen={setMenuOpen} />
       </nav>
 
@@ -25,27 +27,20 @@ export const HeaderPhone = ({ menuOpen, setMenuOpen }) => {
 
 const NavContent = ({ setMenuOpen }) => (
   <>
-    <h2>Aman</h2>
-    <div>
-      <a onClick={() => setMenuOpen(false)} href="#home">
-        Home
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#work">
-        Work
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#timeline">
-        Experience
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#services">
-        Services
-      </a>
-     
-      <a onClick={() => setMenuOpen(false)} href="#contact">
-        Contact
-      </a>
+    <a href="/" className="logoContainer">
+      <img src={final_logo} alt="Company Logo" className="logo" />
+    </a>
+    <div className="navLinks">
+      <a onClick={() => setMenuOpen(false)} href="#home">Home</a>
+      <a onClick={() => setMenuOpen(false)} href="#work">Services</a>
+      <a onClick={() => setMenuOpen(false)} href="#timeline">Case Management</a>
+      <a onClick={() => setMenuOpen(false)} href="#services">File a Dispute</a>
+      <a onClick={() => setMenuOpen(false)} href="#arbitrators">Our Arbitrators & Mediators</a>
+      <a onClick={() => setMenuOpen(false)} href="#pricing">Pricing</a>
+      <a onClick={() => setMenuOpen(false)} href="#contact">Contact Us</a>
     </div>
-    <a href="mailto:official.amanbhatti105@gmail.com">
-      <button id="btn">Email</button>
+    <a href="mailto:official.amanbhatti105@gmail.com" className="loginBtn">
+      <button>Login/Signup</button>
     </a>
   </>
 );
