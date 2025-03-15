@@ -6,7 +6,8 @@ import data from "../assets/data.json";
 const Work = () => {
   return (
     <div id="work">
-      <h2>WORK</h2>
+      
+      <h2>Dedicated Lawyers, Proven Results</h2>
       <section>
         <article>
           <Carousel
@@ -14,7 +15,7 @@ const Work = () => {
             showIndicators={false}
             showStatus={false}
             showThumbs={false}
-            interval={2000}
+            interval={3000} // Increased interval for better readability
             infiniteLoop={true}
             autoPlay={true}
           >
@@ -25,7 +26,7 @@ const Work = () => {
                   <h3>{i.title}</h3>
                   <p>{i.description}</p>
                   <a target={"blank"} href={i.url}>
-                    View Demo
+                    View Profile
                   </a>
                 </aside>
               </div>

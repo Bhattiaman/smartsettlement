@@ -1,50 +1,20 @@
+
 {
   "projects": [
     {
-      "date": "17/10/2021",
-      "title": "MATHEMATHIC",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+      "date": "",
+      "title": "Rudra N. Zadu ",
+      "description": "Corporate Lawyer | M&A | Private Equity | CDRN | Financial Consulting | Transaction Advisor",
       "url": "http://elementsofmathematics.unaux.com/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2012/08/27/22/59/movie-projector-55122__340.png"
-    },
+      "imgSrc": "https://drive.google.com/file/d/1qYugkCCL_kpaYlabnxMhMMG5E_lsRm-i/view?usp=drive_link"
+    }
+,    
     {
-      "date": "07/07/2022",
-      "title": "TIMEZONE",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
-      "url": "https://bhattiaman.github.io/TimeZone/",
+      "date": "",
+      "title": "Pankaj Rishi Krishnan",
+      "description": "Advocate, Supreme Court of India, Delhi HC, Punjab & Haryana HC, NGT, NCLAT, NCDRC & AFT, etc Professor - Criminal & Constitutional Law at State PCS & UPSC Civil Service. Edu Qual - BS, MS, LLB, LLM, PGD ADR, DCL, DIPR",
+      "url": "https://www.linkedin.com/in/pankaj-rishi-krishnan-advocate-3a193221b/",
       "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg"
-    },
-    {
-      "date": "17/10/2022",
-      "title": "Box Office",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
-      "url": "https://shelooks16.github.io/box-office/#/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2012/08/27/22/59/movie-projector-55122__340.png"
-    },
-   
-    {
-      "date": "25/01/2023",
-      "title": "TECHYSTATUS",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
-      "url": "https://reactone-nine.vercel.app",
-      "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg"
-    },
-   
-
-    {
-      "date": "22/01/2023",
-      "title": "VIDEO HUB",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
-      "url": "https://react-video-app-eight.vercel.app",
-      "imgSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg"
-    },
-    
-    {
-      "date": "26/01/2023",
-      "title": "PORTFOLIO",
-      "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
-      "url": "/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2020/03/19/21/25/cactus-4948833_960_720.jpg"
     }
   ]
 }

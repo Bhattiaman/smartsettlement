@@ -32,7 +32,7 @@ const NavContent = ({ setMenuOpen }) => (
     </a>
     <div className="navLinks">
       <a onClick={() => setMenuOpen(false)} href="#home">Home</a>
-      <a onClick={() => setMenuOpen(false)} href="#work">Services</a>
+      <a onClick={() => setMenuOpen(false)} href="#work">Lawyers</a>
       <a onClick={() => setMenuOpen(false)} href="#timeline">Case Management</a>
       <a onClick={() => setMenuOpen(false)} href="#services">File a Dispute</a>
       <a onClick={() => setMenuOpen(false)} href="#arbitrators">Our Arbitrators & Mediators</a>

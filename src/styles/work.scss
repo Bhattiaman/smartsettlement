@@ -1,65 +1,159 @@
 #work {
+  background-color: white;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh; // Use min-height instead of height for better flexibility
   padding: 8rem $p;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   > h2 {
     font: 700 2.5rem $text2;
     width: fit-content;
     border-bottom: 1px solid $color6_1;
     padding: 0.5rem;
     margin: auto;
+    text-align: center; // Center text for better readability
+  }
+
+  > h4 {
+    display: flex;
+    justify-content: center;
+    color: #ffcc00;
+    font-size: 1.5rem; // Added font size for consistency
+    margin-bottom: 1rem; // Added margin for spacing
+    ;
   }
 
   > section {
     margin-top: 4rem;
     width: 100%;
-    height: 100%;
+    max-width: 1200px; // Limit width for larger screens
     background-color: $color5;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem; // Added padding for better spacing
 
     > article {
-      width: 70%;
-      height: 25vmax;
+      width: 100%; // Full width for smaller screens
+      height: auto; // Auto height for flexibility
     }
 
     .workItem {
       overflow-y: auto;
-      height: 25vmax;
-      width: 95%;
+      height: auto; // Auto height for flexibility
+      width: 100%; // Full width for smaller screens
       margin: auto;
       background-color: $color4;
       display: flex;
+      flex-direction: column; // Stack items vertically on smaller screens
       padding: 2rem;
       box-shadow: 0 0 20px 5px $color1;
+      border-radius: 20px; // Added border radius for a modern look
 
       > img {
         border-radius: 20px;
-        width: 40%;
+        width: 100%; // Full width for smaller screens
+        height: 200px; // Fixed height for consistency
         object-fit: cover;
+        margin-bottom: 1rem; // Added margin for spacing
       }
 
       > aside {
-        width: 60%;
+        width: 100%; // Full width for smaller screens
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center; // Center text for better readability
 
         > p {
           letter-spacing: 3px;
           line-height: 180%;
-          margin: 2rem;
+          margin: 1rem 0; // Adjusted margin for better spacing
+          font-size: 1rem; // Added font size for consistency
         }
+
         > a {
           background-color: $color3;
           padding: 0.7rem 2rem;
-          margin: 2rem;
+          margin: 1rem 0; // Adjusted margin for better spacing
           color: $color4;
+          text-decoration: none; // Remove underline
+          border-radius: 5px; // Added border radius for a modern look
           transition: all 0.5s;
+
           &:hover {
             background-color: $color3_1;
+          }
+        }
+      }
+    }
+  }
+
+  // Media Queries for Responsiveness
+  @media (min-width: 768px) {
+    > h2 {
+      font-size: 3rem; // Larger font size for tablets and desktops
+    }
+
+    > h4 {
+      font-size: 2rem; // Larger font size for tablets and desktops
+    }
+
+    > section {
+      padding: 4rem; // Increased padding for larger screens
+
+      .workItem {
+        flex-direction: row; // Side-by-side layout for larger screens
+        height: 300px; // Fixed height for consistency
+
+        > img {
+          width: 40%; // Adjusted width for larger screens
+          height: 100%; // Full height for larger screens
+          margin-bottom: 0; // Remove margin for larger screens
+          margin-right: 2rem; // Added margin for spacing
+        }
+
+        > aside {
+          width: 60%; // Adjusted width for larger screens
+          align-items: flex-start; // Align text to the left
+          text-align: left; // Left-align text for larger screens
+
+          > h3 {
+            font-size: 2rem; // Larger font size for larger screens
+          }
+
+          > p {
+            font-size: 1.1rem; // Larger font size for larger screens
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    > h2 {
+      font-size: 3.5rem; // Even larger font size for desktops
+    }
+
+    > h4 {
+      font-size: 2.5rem; // Even larger font size for desktops
+    }
+
+    > section {
+      .workItem {
+        height: 350px; // Increased height for desktops
+
+        > aside {
+          > h3 {
+            font-size: 2.5rem; // Larger font size for desktops
+          }
+
+          > p {
+            font-size: 1.2rem; // Larger font size for desktops
           }
         }
       }

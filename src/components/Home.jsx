@@ -49,7 +49,7 @@ const Home = ({ ratio }) => {
       <section>
         <div>
           <motion.h1 {...animations.h1}>
-            SmartSettlement <br />  Solution
+          SettleSmart Solutions <br />  <h4 id="headline">Smart Solutions for settling disputes</h4>
           </motion.h1>
 
           <Typewriter
@@ -64,7 +64,7 @@ const Home = ({ ratio }) => {
 
           <div>
             <a href="mailto:official.amanbhatti105@gmail.com">Join as Arbitrator/Mediator</a>
-            <a href="#work">
+            <a href="#Service">
               Projects <BsArrowUpRight />
             </a>
           </div>
