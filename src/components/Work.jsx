@@ -3,7 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../assets/data.json";
 
-
 const Work = () => {
   // Custom arrow components
   const CustomArrow = ({ direction, onClick }) => (
@@ -55,53 +54,55 @@ const Work = () => {
           >
             {data.projects.map((i) => (
               <div key={i.title} className="workItem">
-                <img
-                  src={i.imgSrc}
-                  alt={i.title}
-                  loading="lazy" // Lazy loading for better performance
-                />
+                <div className="image-container">
+                  <img
+                    src={i.imgSrc}
+                    alt={i.title}
+                    loading="lazy" // Lazy loading for better performance
+                  />
+                </div>
                 <aside>
                   <h3>{i.title}</h3>
                   <p>{i.description}</p>
                   <a target="_blank" rel="noopener noreferrer" href={i.url}>
                     View Profile
                   </a>
-                  {/* Social Media Icons */}
-                  <div className="social-icons">
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="instagram"
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                    <a
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="twitter"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="linkedin"
-                    >
-                      <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="facebook"
-                    >
-                      <i className="fab fa-facebook"></i>
-                    </a>
-                  </div>
                 </aside>
+                {/* Social Media Icons */}
+                <div className="social-icons">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="instagram"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="twitter"
+                  >
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin"
+                  >
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="facebook"
+                  >
+                    <i className="fab fa-facebook"></i>
+                  </a>
+                </div>
               </div>
             ))}
           </Carousel>
