@@ -1,25 +1,49 @@
+// Dark Mode Variables
+$dark-bg: #0a0a0a; // Deep black background
+$dark-text: #ffffff; // White text for contrast
+$dark-accent: #ffcc00; // Gold accent color
+$dark-border: #444444; // Border color
+$hover-color: darken($dark-accent, 10%); // Hover effect
+
 #services {
   width: 100%;
   min-height: 100vh;
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-  color: #333;
+  padding: 8rem 2rem;
+  background-color: $dark-bg;
+  color: $dark-text;
   overflow: hidden;
+  position: relative;
+
+  // Gradient overlay for luxury effect
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 70%);
+    pointer-events: none;
+  }
 
   > h2 {
     font: 700 2.5rem "Arial", sans-serif;
     width: fit-content;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 2px solid $dark-accent; // Gold accent color
     padding: 0.5rem;
     margin: 0 auto 1rem;
     text-align: center;
+    color: $dark-text;
+    position: relative;
+    animation: fadeInDown 1s ease-in-out;
+    z-index: 1;
   }
 
   > h3 {
     font: 500 1.5rem "Arial", sans-serif;
     text-align: center;
     margin-bottom: 2rem;
-    color: #555;
+    color: rgba($dark-text, 0.8); // Subdued text color
   }
 
   .container {
@@ -29,6 +53,8 @@
     max-width: 1200px;
     margin: 0 auto;
     gap: 40px;
+    position: relative;
+    z-index: 1;
 
     /* Left Side: Video */
     .video-section {
@@ -37,7 +63,13 @@
         width: 100%;
         height: 400px;
         border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1); // Gold shadow
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02); // Slight zoom effect on hover
+          box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2); // Enhanced gold shadow on hover
+        }
       }
     }
 
@@ -58,7 +90,7 @@
           top: 0;
           bottom: 0;
           width: 2px;
-          background-color: #007BFF;
+          background-color: $dark-accent; // Gold accent color
           z-index: 1;
         }
 
@@ -66,41 +98,163 @@
           display: flex;
           align-items: center;
           gap: 20px;
-          background-color: #fff;
+          background-color: rgba(30, 30, 30, 0.9); // Slightly lighter dark background
           padding: 20px;
           border-radius: 10px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1); // Gold shadow
           position: relative;
           z-index: 2;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
 
           &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px); // Lift effect on hover
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2); // Enhanced gold shadow on hover
           }
 
           .step-icon {
             img {
               width: 60px;
               height: 60px;
+              filter: brightness(0.8); // Slightly darker icon
+              transition: filter 0.3s ease;
+
+              &:hover {
+                filter: brightness(1); // Brighten icon on hover
+              }
             }
           }
 
           .step-content {
             h4 {
               font: 600 1.5rem "Arial", sans-serif;
-              color: #007BFF;
+              color: $dark-accent; // Gold accent color
               margin-bottom: 10px;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: $hover-color; // Darker gold on hover
+              }
             }
 
             p {
               font: 400 1rem "Arial", sans-serif;
               line-height: 1.6;
-              color: #555;
+              color: rgba($dark-text, 0.8); // Subdued text color
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: $dark-text; // White text on hover
+              }
             }
           }
         }
       }
     }
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      gap: 2rem;
+
+      .video-section {
+        iframe {
+          height: 300px;
+        }
+      }
+
+      .process-section {
+        .process {
+          &::before {
+            left: 20px; // Adjust chain line position for smaller screens
+          }
+
+          .step {
+            gap: 15px;
+            padding: 15px;
+
+            .step-icon {
+              img {
+                width: 50px;
+                height: 50px;
+              }
+            }
+
+            .step-content {
+              h4 {
+                font-size: 1.3rem;
+              }
+
+              p {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+
+    > h2 {
+      font-size: 2rem;
+    }
+
+    > h3 {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      .video-section {
+        iframe {
+          height: 250px;
+        }
+      }
+
+      .process-section {
+        .process {
+          &::before {
+            left: 15px; // Adjust chain line position for mobile
+          }
+
+          .step {
+            gap: 10px;
+            padding: 10px;
+
+            .step-icon {
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+
+            .step-content {
+              h4 {
+                font-size: 1.1rem;
+              }
+
+              p {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Keyframes for animations
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

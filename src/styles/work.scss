@@ -1,5 +1,12 @@
+// Dark Mode Variables
+$dark-bg: #0a0a0a; // Deep black background
+$dark-text: #ffffff; // White text for contrast
+$dark-accent: #ffcc00; // Gold accent color
+$dark-border: #444444; // Border color
+$hover-color: darken($dark-accent, 10%); // Hover effect
+
 #work {
-  background-color: #0a0a0a; // Deep black background
+  background-color: $dark-bg;
   width: 100%;
   min-height: 100vh;
   padding: 8rem 2rem;
@@ -7,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffffff; // White text for contrast
+  color: $dark-text;
   overflow: hidden;
   position: relative;
 
@@ -26,23 +33,13 @@
   > h2 {
     font: 700 2.5rem "Arial", sans-serif;
     width: fit-content;
-    border-bottom: 2px solid #ffcc00; // Gold accent color
+    border-bottom: 2px solid $dark-accent; // Gold accent color
     padding: 0.5rem;
     margin: auto;
     text-align: center;
-    color: #ffffff;
+    color: $dark-text;
     position: relative;
     animation: fadeInDown 1s ease-in-out;
-    z-index: 1;
-  }
-
-  > h4 {
-    display: flex;
-    justify-content: center;
-    color: #ffcc00; // Gold accent color
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 1.5s ease-in-out;
     z-index: 1;
   }
 
@@ -116,12 +113,12 @@
         > h3 {
           font-size: 1.5rem;
           margin: 0;
-          color: #ffffff;
+          color: $dark-text;
           font-family: "Playfair Display", serif; // Luxury font
           transition: color 0.3s ease;
 
           &:hover {
-            color: #ffcc00; // Gold accent color on hover
+            color: $dark-accent; // Gold accent color on hover
           }
         }
 
@@ -134,15 +131,15 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: #ffffff; // White text on hover
+            color: $dark-text; // White text on hover
           }
         }
 
         > a {
-          background-color: #ffcc00; // Gold accent color
+          background-color: $dark-accent; // Gold accent color
           padding: 0.7rem 2rem;
           margin: 1rem 0;
-          color: #0a0a0a; // Dark text for contrast
+          color: $dark-bg; // Dark text for contrast
           text-decoration: none;
           border-radius: 5px;
           font-weight: bold;
@@ -163,7 +160,7 @@
           }
 
           &:hover {
-            background-color: #ffcc00; // Darker gold on hover
+            background-color: $hover-color; // Darker gold on hover
             transform: translateY(-3px); // Lift effect on hover
 
             &::before {
@@ -182,7 +179,7 @@
         transition: opacity 0.3s ease;
 
         a {
-          color: #ffffff;
+          color: $dark-text;
           font-size: 1.5rem;
           transition: all 0.3s ease;
 
@@ -219,7 +216,7 @@
       top: 50%;
       transform: translateY(-50%);
       background-color: rgba(255, 215, 0, 0.1); // Semi-transparent gold
-      color: #ffffff;
+      color: $dark-text;
       border: none;
       padding: 0.5rem;
       cursor: pointer;
@@ -261,12 +258,12 @@
       transition: all 0.3s ease;
 
       &:hover {
-        background: #ffcc00; // Gold color on hover
+        background: $dark-accent; // Gold color on hover
         transform: scale(1.2); // Slightly larger on hover
       }
 
       &.active {
-        background: #ffcc00; // Gold color for active indicator
+        background: $dark-accent; // Gold color for active indicator
         transform: scale(1.2); // Slightly larger active indicator
       }
     }
@@ -276,10 +273,6 @@
   @media (min-width: 768px) {
     > h2 {
       font-size: 3rem;
-    }
-
-    > h4 {
-      font-size: 2rem;
     }
 
     > section {
@@ -321,10 +314,6 @@
   @media (min-width: 1024px) {
     > h2 {
       font-size: 3.5rem;
-    }
-
-    > h4 {
-      font-size: 2.5rem;
     }
 
     > section {
@@ -375,4 +364,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} 

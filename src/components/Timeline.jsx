@@ -34,19 +34,19 @@ const cartData = [
 ];
 
 const Timeline = () => {
-  return (<>
-    <h2 id="timeline_heading">Services</h2>
-  <div className="cards-container">
-  
-      {cartData.map((cart, index) => (
-        <div className="card" key={index}>
-          <img src={cart.imgSrc} alt={`${cart.title} Icon`} />
-          <h2>{cart.title}</h2>
-          <p>{cart.description}</p>
-          <a href="#">Read More →</a>
-        </div>
-      ))}
-    </div>
+  return (
+    <>
+      <h2 id="timeline_heading">Services</h2>
+      <div className="cards-container">
+        {cartData.map((cart, index) => (
+          <div className="card" key={index}>
+            <img src={cart.imgSrc} alt={`${cart.title} Icon`} />
+            <h2>{cart.title}</h2>
+            <p>{cart.description}</p>
+            <a href="#">Read More →</a>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

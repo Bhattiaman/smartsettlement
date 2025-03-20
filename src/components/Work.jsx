@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../assets/data.json";
+import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const Work = () => {
   // Custom arrow components
@@ -76,7 +77,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="instagram"
                   >
-                    <i className="fab fa-instagram"></i>
+                    <FaInstagram />
                   </a>
                   <a
                     href="https://twitter.com"
@@ -84,7 +85,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="twitter"
                   >
-                    <i className="fab fa-twitter"></i>
+                    <FaTwitter />
                   </a>
                   <a
                     href="https://linkedin.com"
@@ -92,7 +93,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="linkedin"
                   >
-                    <i className="fab fa-linkedin"></i>
+                    <FaLinkedin />
                   </a>
                   <a
                     href="https://facebook.com"
@@ -100,7 +101,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="facebook"
                   >
-                    <i className="fab fa-facebook"></i>
+                    <FaFacebook />
                   </a>
                 </div>
               </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import final from "../assets/final.png";
 import "../styles/header_logo.scss";
 import final_logo from "../assets/final_logo.png";
 const Header = ({ setMenuOpen, menuOpen }) => {
