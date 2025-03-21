@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../assets/data.json";
 import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
 
-const Work = () => {
+const Lawyer = () => {
   // Custom arrow components
   const CustomArrow = ({ direction, onClick }) => (
     <button
@@ -113,4 +113,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Lawyer;

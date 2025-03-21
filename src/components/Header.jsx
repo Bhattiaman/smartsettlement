@@ -1,7 +1,9 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "../styles/header_logo.scss";
 import final_logo from "../assets/final_logo.png";
+
 const Header = ({ setMenuOpen, menuOpen }) => {
   return (
     <>
@@ -26,17 +28,17 @@ export const HeaderPhone = ({ menuOpen, setMenuOpen }) => {
 
 const NavContent = ({ setMenuOpen }) => (
   <>
-    <a href="/" className="logoContainer">
+    <Link to="/" className="logoContainer">
       <img src={final_logo} alt="Company Logo" className="logo" />
-    </a>
+    </Link>
     <div className="navLinks">
-      <a onClick={() => setMenuOpen(false)} href="#home">Home</a>
-      <a onClick={() => setMenuOpen(false)} href="#work">Lawyers</a>
-      <a onClick={() => setMenuOpen(false)} href="#timeline">Case Management</a>
-      <a onClick={() => setMenuOpen(false)} href="#services">File a Dispute</a>
-      <a onClick={() => setMenuOpen(false)} href="#arbitrators">Our Arbitrators & Mediators</a>
-      <a onClick={() => setMenuOpen(false)} href="#pricing">Pricing</a>
-      <a onClick={() => setMenuOpen(false)} href="#contact">Contact Us</a>
+      <Link onClick={() => setMenuOpen(false)} to="/">Home</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/lawyers">Lawyers</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/timeline">Case Management</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/services">File a Dispute</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/arbitrators">Our Arbitrators & Mediators</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/pricing">Pricing</Link>
+      <Link onClick={() => setMenuOpen(false)} to="/contact">Contact Us</Link>
     </div>
     <a href="mailto:official.amanbhatti105@gmail.com" className="loginBtn">
       <button>Login/Signup</button>
