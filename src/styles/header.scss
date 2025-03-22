@@ -2,6 +2,14 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+// Ensure the parent container of the header allows sticky behavior
+#root, .app-container {
+  min-height: 100vh; // Ensure the parent container has enough height
+  display: flex;
+  flex-direction: column;
 }
 
 // Navigation Container
@@ -15,7 +23,7 @@ body {
   padding: 0 2rem;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000; // Ensure header is above other content
   box-sizing: border-box;
 
   .logoContainer {
@@ -95,7 +103,7 @@ body {
   border: none;
   font-size: 1.8rem;
   color: white;
-  z-index: 150;
+  z-index: 1500; // Ensure button is above the header
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 
@@ -117,7 +125,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 120;
+  z-index: 1200; // Ensure menu is above other content
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0;
@@ -218,4 +226,4 @@ body {
       font-size: 0.9rem;
     }
   }
-} 
+}
