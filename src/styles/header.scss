@@ -1,4 +1,10 @@
-// Header Styling
+// Base Styles
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+// Navigation Container
 .navContainer {
   width: 100%;
   height: 80px;
@@ -10,15 +16,21 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  
+  box-sizing: border-box;
+
   .logoContainer {
     display: flex;
     align-items: center;
-  }
-  
-  .logo {
-    height: 75px;
-    width: auto;
+
+    .logo {
+      height: 75px;
+      width: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 
   .navLinks {
@@ -29,9 +41,27 @@
     a {
       color: white;
       font-weight: 500;
-      transition: all 0.3s;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #ffcc00;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease-in-out;
+      }
+
       &:hover {
         color: #ffcc00;
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
@@ -44,7 +74,9 @@
       background-color: white;
       color: black;
       font-weight: bold;
-      transition: all 0.3s;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
       &:hover {
         background-color: #ffcc00;
         color: black;
@@ -65,55 +97,125 @@
   color: white;
   z-index: 150;
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
     color: #ffcc00;
   }
 }
 
-// Mobile Navigation
+// Mobile Navigation Menu
 .navPhone {
-  transition: all 0.5s;
-  transform: translateY(-100%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   width: 100%;
   height: 100vh;
   background-color: black;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 120;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
 
   a {
     color: white;
     font-size: 1.2rem;
     font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
     &:hover {
       color: #ffcc00;
     }
   }
+
+  .loginBtn {
+    button {
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #ffcc00;
+        color: black;
+      }
+    }
+  }
 }
 
-.navPhoneComes {
+// Show Mobile Navigation Menu
+.navPhoneOpen {
   transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 // Responsive Design
 @media (max-width: 1024px) {
-  .navLinks {
-    display: none;
+  .navContainer {
+    .navLinks, .loginBtn {
+      display: none;
+    }
   }
 
   .navBtn {
     display: block;
+  }
+
+  .navPhone {
+    display: flex;
   }
 }
 
 @media (max-width: 768px) {
   .navContainer {
     padding: 0 1rem;
+
+    .logo {
+      height: 60px;
+    }
+  }
+
+  .navPhone {
+    gap: 1rem;
+
+    a {
+      font-size: 1rem;
+    }
   }
 }
+
+@media (max-width: 480px) {
+  .navContainer {
+    padding: 0 0.5rem;
+
+    .logo {
+      height: 50px;
+    }
+  }
+
+  .navBtn {
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .navPhone {
+    gap: 0.8rem;
+
+    a {
+      font-size: 0.9rem;
+    }
+  }
+} 

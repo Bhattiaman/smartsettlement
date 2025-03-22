@@ -4,50 +4,76 @@ $secondary-color: #1a1a1a; // Dark background
 $text-color: #f5f5f5; // Light text
 $border-color: #444444; // Border color
 $hover-color: darken($primary-color, 10%); // Hover effect
+$text1: "Roboto", sans-serif;
+$text2: "Open Sans", sans-serif;
+
+// Additional Colors
+$color1: rgba(202, 248, 250, 0.6);
+$color2: #286f6c;
+$color3: rgb(83, 76, 77);
+$color4: #fff;
+$color5: #292b46;
+$color6: #161616;
+
+// Padding Variables
+$p: 13.33vmax;
+$p_md: 7vmax;
+$p_base: 5vmax;
+$p_zero: 0;
 
 #contact {
+  width: 100%;
   min-height: 90vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4rem;
-  gap: 2rem;
-  background-color: $secondary-color; // Dark background
-  color: $text-color; // Light text
+  background-color: $secondary-color;
+  color: $text-color;
 
-  > section {
+  .container {
     width: 100%;
-    height: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
-    > form {
+    form {
       width: 100%;
       max-width: 500px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
 
-      > h2 {
+      h2 {
         text-align: center;
         font: 600 2.5rem $text2;
         margin-bottom: 1rem;
-        color: $primary-color; // Accent color for heading
+        color: $primary-color;
       }
 
-      > p {
+      p {
         text-align: center;
         font: 400 1.1rem $text1;
         margin-bottom: 2rem;
-        color: rgba($text-color, 0.8); // Subdued text color
+        color: rgba($text-color, 0.8);
       }
 
       .input-group {
         width: 100%;
         position: relative;
 
-        > .input-icon {
+        .input-icon {
           position: absolute;
           left: 1rem;
           top: 50%;
@@ -55,8 +81,8 @@ $hover-color: darken($primary-color, 10%); // Hover effect
           color: rgba($text-color, 0.6);
         }
 
-        > input,
-        > textarea {
+        input,
+        textarea {
           width: 100%;
           padding: 1rem 1rem 1rem 2.5rem;
           font: 400 1rem $text1;
@@ -76,18 +102,17 @@ $hover-color: darken($primary-color, 10%); // Hover effect
           }
         }
 
-        > textarea {
+        textarea {
           resize: vertical;
           min-height: 150px;
         }
       }
 
-      > button {
+      button {
         cursor: pointer;
         background-color: $primary-color;
         color: $text-color;
         font: 600 1rem $text1;
-        text-transform: uppercase;
         padding: 1rem 2rem;
         border: none;
         border-radius: 8px;
@@ -95,11 +120,6 @@ $hover-color: darken($primary-color, 10%); // Hover effect
 
         &:hover {
           background-color: $hover-color;
-        }
-
-        &:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
         }
       }
     }
@@ -111,129 +131,43 @@ $hover-color: darken($primary-color, 10%); // Hover effect
       margin-top: 2rem;
       font: 500 1rem $text1;
       color: $text-color;
-
-      > span {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
     }
   }
 
-  > aside {
-    width: 100%;
-    height: 100%;
+  aside {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center; // Center align aside content
+    align-items: center;
 
-    .cta-section {
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      background-color: lighten($secondary-color, 5%);
-
-      > h3 {
-        font: 600 1.5rem $text2;
-        margin-bottom: 1rem;
-        color: $primary-color; // Accent color for heading
-      }
-
-      .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-
-        > a {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.8rem 1.5rem;
-          background-color: $primary-color;
-          color: $text-color;
-          font: 500 1rem $text1;
-          border-radius: 8px;
-          text-decoration: none;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: $hover-color;
-          }
-        }
-      }
-    }
-
-    .office-hours {
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      background-color: lighten($secondary-color, 10%);
-
-      > h3 {
-        font: 600 1.5rem $text2;
-        margin-bottom: 1rem;
-        color: $primary-color; // Accent color for heading
-      }
-
-      > p {
-        font: 400 1rem $text1;
-        display: flex;
-        align-items: center;
-        justify-content: center; // Center align text
-        gap: 0.5rem;
-      }
-    }
-
-    .map-container {
-      padding: 2rem;
-      border-radius: 8px;
-      background-color: lighten($secondary-color, 5%);
-
-      > h3 {
-        font: 600 1.5rem $text2;
-        margin-bottom: 1rem;
-        color: $primary-color; // Accent color for heading
-      }
-
-      > iframe {
-        width: 100%;
-        height: 200px;
-        border: none;
-        border-radius: 8px;
-      }
-    }
-
+    .cta-section,
+    .office-hours,
+    .map-container,
     .testimonials {
       padding: 2rem;
       border-radius: 8px;
+      text-align: center;
       background-color: lighten($secondary-color, 5%);
 
-      > h3 {
+      h3 {
         font: 600 1.5rem $text2;
         margin-bottom: 1rem;
-        color: $primary-color; // Accent color for heading
+        color: $primary-color;
       }
+    }
 
-      .testimonial-cards {
-        display: flex;
-        gap: 1rem;
+    .testimonial-cards {
+      display: flex;
+      gap: 1rem;
 
-        .card {
-          background-color: lighten($secondary-color, 10%);
-          padding: 1.5rem;
-          border-radius: 8px;
-          flex: 1;
+      .card {
+        background-color: lighten($secondary-color, 10%);
+        padding: 1.5rem;
+        border-radius: 8px;
 
-          > p {
-            font: 400 1rem $text1;
-            margin-bottom: 1rem;
-          }
-
-          > span {
-            font: 500 0.9rem $text1;
-            color: rgba($text-color, 0.8);
-          }
+        p {
+          font: 400 1rem $text1;
+          margin-bottom: 1rem;
         }
       }
     }
@@ -242,25 +176,8 @@ $hover-color: darken($primary-color, 10%); // Hover effect
 
 // Responsive Design
 @media (max-width: 768px) {
-  #contact {
+  #contact .container {
     grid-template-columns: 1fr;
-    padding: 2rem;
-
-    > section {
-      padding: 1rem;
-    }
-
-    > aside {
-      gap: 1rem;
-    }
-
-    .office-hours,
-    .testimonials {
-      width: 100%; // Full width on smaller screens
-    }
-
-    .testimonial-cards {
-      flex-direction: column;
-    }
+    text-align: center;
   }
 }

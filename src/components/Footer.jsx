@@ -1,5 +1,6 @@
 import React from "react";
 import final_logo from "../assets/final_logo.png";
+import "../styles/footer.scss";
 
 import {
   AiFillGithub,

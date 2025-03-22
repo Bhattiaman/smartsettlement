@@ -1,80 +1,73 @@
-import React, { useRef } from "react";
-import { animate, motion } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
-import me from "../assets/hhh.png";
+import "../styles/home.scss";
 import right_home from "../assets/right_home.png";
 
-const Home = ({ ratio }) => {
-  const clientCount = useRef(null);
-  const projectCount = useRef(null);
-
-  const animationClientsCount = () => {
-    animate(0, 100, {
-      duration: 1,
-      onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
-    });
-  };
-  const animationProjectsCount = () => {
-    animate(0, 500, {
-      duration: 1,
-      onUpdate: (v) => (projectCount.current.textContent = v.toFixed()),
-    });
-  };
-
+const Home = () => {
   const animations = {
-    h1: {
-      initial: {
-        x: "-100%",
-        opacity: 0,
-      },
-      whileInView: {
-        x: 0,
-        opacity: 1,
-      },
+    left: {
+      initial: { x: "-100%", opacity: 0 },
+      whileInView: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
     },
-    button: {
-      initial: {
-        y: "-100%",
-        opacity: 0,
-      },
-      whileInView: {
-        y: 0,
-        opacity: 1,
-      },
+    right: {
+      initial: { x: "100%", opacity: 0 },
+      whileInView: { x: 0, opacity: 1, transition: { duration: 0.8, delay: 0.2, ease: "easeOut" } },
+    },
+    typewriter: {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.8, delay: 0.4, ease: "easeOut" } },
+    },
+    buttons: {
+      initial: { y: "100%", opacity: 0 },
+      whileInView: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.6, ease: "easeOut" } },
     },
   };
+
   return (
     <div id="home">
-      <section>
-        <div>
-          <motion.h1 {...animations.h1}>
-          SettleSmart Solutions <br />  <h4 id="headline">Smart Solutions for settling disputes</h4>
-          </motion.h1>
+      <section className="hero-section">
+        <motion.div {...animations.left} className="left-section">
+          <h1>
+            SettleSmart Solutions
+          </h1>
+          <h4>
+            Smart Solutions for Settling Disputes
+          </h4>
 
-          <Typewriter
-            options={{
-              strings: ["From Vivaad se Samadhan Tak", "Justice Delivered with Care", "Start a Dispute"],
-              autoStart: true,
-              loop: true,
-              cursor: "",
-              wrapperClassName: "typewriterpara",
-            }}
-          />
+          <motion.div {...animations.typewriter}>
+            <Typewriter
+              options={{
+                strings: [
+                  "From Vivaad se Samadhan Tak",
+                  "Justice Delivered with Care",
+                  "Start a Dispute",
+                ],
+                autoStart: true,
+                loop: true,
+                cursor: "",
+                wrapperClassName: "typewriterpara",
+              }}
+            />
+          </motion.div>
 
-          <div>
-            <a href="mailto:official.amanbhatti105@gmail.com">Join as Arbitrator/Mediator</a>
-            <a href="#Service">
+          <motion.div {...animations.buttons} className="button-container">
+            <a href="mailto:official.amanbhatti105@gmail.com" className="primary-btn">
+              Join as Arbitrator/Mediator
+            </a>
+            <a href="#Service" className="secondary-btn">
               Projects <BsArrowUpRight />
             </a>
-          </div>
-            
-        </div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div {...animations.right} className="right-section">
+          <img src={right_home} alt="SettleSmart Solutions" />
+        </motion.div>
       </section>
-      <section>
-        <img src={right_home} alt="Aman" />
-      </section>
-      <BsChevronDown />
+
+      <BsChevronDown className="scroll-down" />
     </div>
   );
 };
