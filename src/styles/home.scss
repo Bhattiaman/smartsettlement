@@ -3,14 +3,14 @@
 $text1: "Roboto", sans-serif;
 $text2: "Open Sans", sans-serif;
 
-$color1: #fc0; // Primary color
+$color1: #286f6c; // Primary color
 $color2: #ffcc00; // Accent color
 $color3: #161616; // Dark color
 $color4: #fff; // White color
 
 #home {
   width: 100%;
-  min-height: 80vh; // Adjusted height
+  height: 80vh; // Decreased height
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,17 +31,13 @@ $color4: #fff; // White color
     justify-content: space-between;
     gap: 2rem;
 
-    @media (max-width: 768px) {
-      flex-direction: column; // Stack vertically on tablets and phones
-      text-align: center; // Center align text
-    }
-
     .left-section {
       flex: 1;
       min-width: 300px;
+      text-align: left;
 
       > h1 {
-        font: 900 3rem $text1; // Adjusted font size
+        font: 900 3rem $text1; // Slightly smaller font size
         margin-bottom: 1rem;
         color: $color4; // White color for heading
 
@@ -89,10 +85,6 @@ $color4: #fff; // White color
         gap: 1.5rem;
         margin: 2rem 0;
 
-        @media (max-width: 768px) {
-          justify-content: center; // Center buttons on tablets and phones
-        }
-
         > a {
           padding: 1rem 2rem;
           border-radius: 30px;
@@ -105,18 +97,18 @@ $color4: #fff; // White color
             color: black; // White text
 
             &:hover {
-              background-color: darken($color1, 10%);
+              background-color: darken($color2, 10%);
             }
           }
 
           &.secondary-btn {
-            color: $color1; // Primary color for text
+            color: $color2 ; // Primary color for text
             display: flex;
             align-items: center;
             gap: 0.5rem;
 
             &:hover {
-              color: darken($color1, 10%);
+              color: darken($color2, 10%);
             }
           }
         }
@@ -132,7 +124,7 @@ $color4: #fff; // White color
 
       > img {
         width: 100%;
-        max-width: 400px; // Adjusted image size
+        max-width: 400px; // Smaller image size
         height: auto;
         object-fit: contain;
         border-radius: 10px;
@@ -141,14 +133,6 @@ $color4: #fff; // White color
 
         &:hover {
           transform: scale(1.05); // Hover animation for image
-        }
-
-        @media (max-width: 768px) {
-          max-width: 300px; // Smaller image on tablets
-        }
-
-        @media (max-width: 480px) {
-          max-width: 250px; // Smaller image on mobile
         }
       }
     }
