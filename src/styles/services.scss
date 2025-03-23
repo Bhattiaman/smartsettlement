@@ -1,4 +1,4 @@
-
+// Variables
 $text1: "Roboto", sans-serif;
 $text2: "Open Sans", sans-serif;
 
@@ -14,21 +14,13 @@ $color6: #161616;
 $color6_1: #16161698;
 $color6_2: #16161622;
 
-$p: 13.33vmax;
-$p_md: 7vmax;
-$p_base: 5vmax;
-$p_base_inverse: 15vmax 10vmax;
-$p_sm: 2vmax;
-$p_sm_inverse: 13vmax 0;
-$p_zero: 0;
-
-// Dark Mode Variables
 $dark-bg: #0a0a0a; // Deep black background
 $dark-text: #ffffff; // White text for contrast
 $dark-accent: #ffcc00; // Gold accent color
 $dark-border: #444444; // Border color
 $hover-color: darken($dark-accent, 10%); // Hover effect
 
+// Global Styles
 #services {
   width: 100%;
   min-height: 100vh;
@@ -50,56 +42,67 @@ $hover-color: darken($dark-accent, 10%); // Hover effect
     pointer-events: none;
   }
 
-  > h2 {
-    font: 700 2.5rem "Arial", sans-serif;
-    width: fit-content;
-    border-bottom: 2px solid $dark-accent; // Gold accent color
-    padding: 0.5rem;
-    margin: 0 auto 1rem;
-    text-align: center;
-    color: $dark-text;
-    position: relative;
-    animation: fadeInDown 1s ease-in-out;
-    z-index: 1;
-  }
-
-  > h3 {
-    font: 500 1.5rem "Arial", sans-serif;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: rgba($dark-text, 0.8); // Subdued text color
-  }
-
   .container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 40px;
+    padding: 0 1rem;
     position: relative;
     z-index: 1;
 
-    /* Left Side: Video */
+    > h2 {
+      font: 700 2.5rem $text1;
+      width: fit-content;
+      border-bottom: 2px solid $dark-accent;
+      padding: 0.5rem;
+      margin: 0 auto 2rem;
+      text-align: center;
+      color: $dark-text;
+      position: relative;
+      animation: fadeInDown 1s ease-in-out;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Video Section */
     .video-section {
-      flex: 1;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+
       iframe {
         width: 100%;
         height: 400px;
         border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1); // Gold shadow
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover {
-          transform: scale(1.02); // Slight zoom effect on hover
-          box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2); // Enhanced gold shadow on hover
+          transform: scale(1.02);
+          box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+          height: 300px;
+        }
+
+        @media (max-width: 480px) {
+          height: 250px;
         }
       }
     }
 
-    /* Right Side: Work Process */
+    /* Process Section */
     .process-section {
-      flex: 1;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+
       .process {
         display: flex;
         flex-direction: column;
@@ -110,64 +113,108 @@ $hover-color: darken($dark-accent, 10%); // Hover effect
         &::before {
           content: '';
           position: absolute;
-          left: 30px; /* Adjust based on icon size */
+          left: 30px;
           top: 0;
           bottom: 0;
           width: 2px;
-          background-color: $dark-accent; // Gold accent color
+          background-color: $dark-accent;
           z-index: 1;
+
+          @media (max-width: 768px) {
+            left: 20px;
+          }
+
+          @media (max-width: 480px) {
+            left: 15px;
+          }
         }
 
         .step {
           display: flex;
           align-items: center;
           gap: 20px;
-          background-color: rgba(30, 30, 30, 0.9); // Slightly lighter dark background
+          background-color: rgba(30, 30, 30, 0.9);
           padding: 20px;
           border-radius: 10px;
-          box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1); // Gold shadow
+          box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
           position: relative;
           z-index: 2;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
 
           &:hover {
-            transform: translateY(-10px); // Lift effect on hover
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2); // Enhanced gold shadow on hover
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+          }
+
+          @media (max-width: 768px) {
+            gap: 15px;
+            padding: 15px;
+          }
+
+          @media (max-width: 480px) {
+            gap: 10px;
+            padding: 10px;
           }
 
           .step-icon {
             img {
               width: 60px;
               height: 60px;
-              filter: brightness(0.8); // Slightly darker icon
+              filter: brightness(0.8);
               transition: filter 0.3s ease;
 
               &:hover {
-                filter: brightness(1); // Brighten icon on hover
+                filter: brightness(1);
+              }
+
+              @media (max-width: 768px) {
+                width: 50px;
+                height: 50px;
+              }
+
+              @media (max-width: 480px) {
+                width: 40px;
+                height: 40px;
               }
             }
           }
 
           .step-content {
             h4 {
-              font: 600 1.5rem "Arial", sans-serif;
-              color: $dark-accent; // Gold accent color
+              font: 600 1.5rem $text1;
+              color: $dark-accent;
               margin-bottom: 10px;
               transition: color 0.3s ease;
 
               &:hover {
-                color: $hover-color; // Darker gold on hover
+                color: $hover-color;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 1.3rem;
+              }
+
+              @media (max-width: 480px) {
+                font-size: 1.1rem;
               }
             }
 
             p {
-              font: 400 1rem "Arial", sans-serif;
+              font: 400 1rem $text1;
               line-height: 1.6;
-              color: rgba($dark-text, 0.8); // Subdued text color
+              color: rgba($dark-text, 0.8);
               transition: color 0.3s ease;
 
               &:hover {
-                color: $dark-text; // White text on hover
+                color: $dark-text;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 0.9rem;
+              }
+
+              @media (max-width: 480px) {
+                font-size: 0.8rem;
               }
             }
           }
@@ -177,97 +224,8 @@ $hover-color: darken($dark-accent, 10%); // Hover effect
   }
 
   // Responsive Design
-  @media (max-width: 1024px) {
-    .container {
-      flex-direction: column;
-      gap: 2rem;
-
-      .video-section {
-        iframe {
-          height: 300px;
-        }
-      }
-
-      .process-section {
-        .process {
-          &::before {
-            left: 20px; // Adjust chain line position for smaller screens
-          }
-
-          .step {
-            gap: 15px;
-            padding: 15px;
-
-            .step-icon {
-              img {
-                width: 50px;
-                height: 50px;
-              }
-            }
-
-            .step-content {
-              h4 {
-                font-size: 1.3rem;
-              }
-
-              p {
-                font-size: 0.9rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   @media (max-width: 768px) {
     padding: 4rem 1rem;
-
-    > h2 {
-      font-size: 2rem;
-    }
-
-    > h3 {
-      font-size: 1.2rem;
-    }
-
-    .container {
-      .video-section {
-        iframe {
-          height: 250px;
-        }
-      }
-
-      .process-section {
-        .process {
-          &::before {
-            left: 15px; // Adjust chain line position for mobile
-          }
-
-          .step {
-            gap: 10px;
-            padding: 10px;
-
-            .step-icon {
-              img {
-                width: 40px;
-                height: 40px;
-              }
-            }
-
-            .step-content {
-              h4 {
-                font-size: 1.1rem;
-              }
-
-              p {
-                font-size: 0.8rem;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
 

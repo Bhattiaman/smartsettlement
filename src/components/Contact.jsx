@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import vg from "../assets/vg.png"; // Replace with a modern legal-themed graphic
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { addDoc, collection } from "firebase/firestore";
@@ -39,8 +38,8 @@ const Contact = () => {
     <div id="contact">
       <section>
         <motion.form onSubmit={submitHandler} {...animations.form}>
-          <h2>Contact Us</h2>
-          <p>We’re here to help. Reach out to us for any legal inquiries.</p>
+          <h2>Get in Touch</h2>
+          <p>We’re here to help. Reach out to us for any legal inquiries or questions.</p>
 
           <div className="input-group">
             <FaUser className="input-icon" />
@@ -62,24 +61,48 @@ const Contact = () => {
       </section>
 
       <aside>
-        <div className="cta-section">
-          <h3>Need Immediate Assistance?</h3>
-          <div className="cta-buttons">
-            <a href="tel:+13264855467"><FaPhone /> Call Now</a>
-            <a href="mailto:info@email.com"><FaEnvelope /> Email Us</a>
+        <div className="contact-info">
+          <h3>Contact Information</h3>
+          <div className="info-item">
+            <FaPhone className="info-icon" />
+            <p>+1 (326) 485-5467</p>
+          </div>
+          <div className="info-item">
+            <FaEnvelope className="info-icon" />
+            <p>info@email.com</p>
+          </div>
+          <div className="info-item">
+            <FaMapMarkerAlt className="info-icon" />
+            <p>123 Legal Street, Suite 456, City, Country</p>
           </div>
         </div>
 
         <div className="office-hours">
           <h3>Office Hours</h3>
-          <p><FaClock /> Mon - Fri: 9:00 AM - 6:00 PM</p>
-          <p><FaClock /> Sat: 10:00 AM - 2:00 PM</p>
-          <p><FaClock /> Sun: Closed</p>
+          <div className="info-item">
+            <FaClock className="info-icon" />
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+          </div>
+          <div className="info-item">
+            <FaClock className="info-icon" />
+            <p>Sat: 10:00 AM - 2:00 PM</p>
+          </div>
+          <div className="info-item">
+            <FaClock className="info-icon" />
+            <p>Sun: Closed</p>
+          </div>
         </div>
 
         <div className="map-container">
           <h3>Our Location</h3>
-          <iframe src="https://www.google.com/maps/embed?..." width="100%" height="200" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2e7d30c3b8!2sLegal%20Street!5e0!3m2!1sen!2sus!4v1625070000000!5m2!1sen!2sus"
+            width="100%"
+            height="200"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
         </div>
       </aside>
     </div>

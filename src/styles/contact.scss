@@ -7,70 +7,41 @@ $hover-color: darken($primary-color, 10%); // Hover effect
 $text1: "Roboto", sans-serif;
 $text2: "Open Sans", sans-serif;
 
-// Additional Colors
-$color1: rgba(202, 248, 250, 0.6);
-$color2: #286f6c;
-$color3: rgb(83, 76, 77);
-$color4: #fff;
-$color5: #292b46;
-$color6: #161616;
-
-// Padding Variables
-$p: 13.33vmax;
-$p_md: 7vmax;
-$p_base: 5vmax;
-$p_zero: 0;
-
 #contact {
   width: 100%;
   min-height: 90vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 4rem;
   background-color: $secondary-color;
   color: $text-color;
 
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-  }
-
   section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    flex: 1 1 50%;
+    max-width: 600px;
+    padding: 2rem;
 
     form {
       width: 100%;
-      max-width: 500px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
 
       h2 {
-        text-align: center;
         font: 600 2.5rem $text2;
-        margin-bottom: 1rem;
         color: $primary-color;
+        margin-bottom: 1rem;
       }
 
       p {
-        text-align: center;
         font: 400 1.1rem $text1;
-        margin-bottom: 2rem;
         color: rgba($text-color, 0.8);
+        margin-bottom: 2rem;
       }
 
       .input-group {
-        width: 100%;
         position: relative;
 
         .input-icon {
@@ -123,52 +94,46 @@ $p_zero: 0;
         }
       }
     }
-
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      font: 500 1rem $text1;
-      color: $text-color;
-    }
   }
 
   aside {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+    flex: 1 1 40%;
+    max-width: 500px;
+    padding: 2rem;
 
-    .cta-section,
+    .contact-info,
     .office-hours,
-    .map-container,
-    .testimonials {
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      background-color: lighten($secondary-color, 5%);
+    .map-container {
+      margin-bottom: 2rem;
 
       h3 {
         font: 600 1.5rem $text2;
-        margin-bottom: 1rem;
         color: $primary-color;
+        margin-bottom: 1rem;
       }
-    }
 
-    .testimonial-cards {
-      display: flex;
-      gap: 1rem;
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
 
-      .card {
-        background-color: lighten($secondary-color, 10%);
-        padding: 1.5rem;
-        border-radius: 8px;
+        .info-icon {
+          color: $primary-color;
+        }
 
         p {
           font: 400 1rem $text1;
-          margin-bottom: 1rem;
+          color: rgba($text-color, 0.8);
         }
+      }
+    }
+
+    .map-container {
+      iframe {
+        width: 100%;
+        height: 200px;
+        border-radius: 8px;
       }
     }
   }
@@ -176,8 +141,54 @@ $p_zero: 0;
 
 // Responsive Design
 @media (max-width: 768px) {
-  #contact .container {
-    grid-template-columns: 1fr;
-    text-align: center;
+  #contact {
+    flex-direction: column;
+    padding: 2rem;
+
+    section,
+    aside {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 1rem;
+
+    section {
+      form {
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .input-group {
+          input,
+          textarea {
+            padding: 0.75rem 0.75rem 0.75rem 2rem;
+          }
+        }
+
+        button {
+          padding: 0.75rem 1.5rem;
+        }
+      }
+    }
+
+    aside {
+      .contact-info,
+      .office-hours,
+      .map-container {
+        h3 {
+          font-size: 1.25rem;
+        }
+      }
+    }
   }
 }

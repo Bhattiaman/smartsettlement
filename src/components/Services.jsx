@@ -2,13 +2,14 @@ import React from "react";
 import "../styles/services.scss";
 
 const Services = () => {
-  return (
+  return (<>
+    
     <div id="services">
-      <h2>Work Process</h2>
-      <h3>Navigating The Law: Your Assurance Of Peace</h3>
+     
 
       <div className="container">
         {/* Left Side: Video */}
+        <h2>Work Process</h2>
         <div className="video-section">
           <iframe
             width="100%"
@@ -75,6 +76,7 @@ const Services = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

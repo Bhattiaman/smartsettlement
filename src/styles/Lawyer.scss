@@ -34,8 +34,8 @@ $p_zero: 0;
   padding: 8rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; // Center horizontally
+  justify-content: center; // Center vertically
   color: $dark-text;
   overflow: hidden;
   position: relative;
@@ -63,6 +63,14 @@ $p_zero: 0;
     position: relative;
     animation: fadeInDown 1s ease-in-out;
     z-index: 1;
+
+    @media (max-width: 768px) {
+      font-size: 2rem; // Smaller font size for tablets
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem; // Smaller font size for mobile
+    }
   }
 
   > section {
@@ -73,31 +81,55 @@ $p_zero: 0;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1); // Gold shadow
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center; // Center horizontally
+    justify-content: center; // Center vertically
     padding: 2rem;
     animation: slideInUp 1s ease-in-out;
     position: relative;
     z-index: 1;
 
+    @media (max-width: 768px) {
+      padding: 1rem; // Smaller padding for tablets
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem; // Smaller padding for mobile
+    }
+
     > article {
       width: 100%;
       height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Center horizontally
+      justify-content: center; // Center vertically
     }
 
     .workItem {
       overflow-y: auto;
       height: auto;
       width: 100%;
+      max-width: 800px; // Limit width for better readability
       margin: auto;
       background-color: rgba(30, 30, 30, 0.9); // Slightly lighter dark background
       display: flex;
       flex-direction: column;
+      align-items: center; // Center horizontally
+      justify-content: center; // Center vertically
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1); // Gold shadow
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
+
+      @media (max-width: 768px) {
+        padding: 1rem; // Smaller padding for tablets
+      }
+
+      @media (max-width: 480px) {
+        padding: 0.5rem; // Smaller padding for mobile
+      }
 
       &:hover {
         transform: translateY(-10px); // Lift effect on hover
@@ -108,6 +140,10 @@ $p_zero: 0;
         position: relative;
         border-radius: 20px;
         overflow: hidden;
+        width: 100%;
+        max-width: 600px; // Limit width for better readability
+        display: flex;
+        justify-content: center; // Center horizontally
 
         > img {
           width: 100%;
@@ -116,6 +152,14 @@ $p_zero: 0;
           margin-bottom: 1rem;
           filter: brightness(0.8); // Slightly darker image
           transition: filter 0.3s ease, transform 0.3s ease;
+
+          @media (max-width: 768px) {
+            height: 150px; // Smaller image height for tablets
+          }
+
+          @media (max-width: 480px) {
+            height: 120px; // Smaller image height for mobile
+          }
 
           &:hover {
             filter: brightness(1); // Brighten image on hover
@@ -128,8 +172,8 @@ $p_zero: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        align-items: center; // Center horizontally
+        justify-content: center; // Center vertically
         text-align: center;
 
         > h3 {
@@ -138,6 +182,14 @@ $p_zero: 0;
           color: $dark-text;
           font-family: "Playfair Display", serif; // Luxury font
           transition: color 0.3s ease;
+
+          @media (max-width: 768px) {
+            font-size: 1.2rem; // Smaller font size for tablets
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1rem; // Smaller font size for mobile
+          }
 
           &:hover {
             color: $dark-accent; // Gold accent color on hover
@@ -151,6 +203,14 @@ $p_zero: 0;
           font-size: 1rem;
           color: #cccccc; // Lighter text for readability
           transition: color 0.3s ease;
+
+          @media (max-width: 768px) {
+            font-size: 0.9rem; // Smaller font size for tablets
+          }
+
+          @media (max-width: 480px) {
+            font-size: 0.8rem; // Smaller font size for mobile
+          }
 
           &:hover {
             color: $dark-text; // White text on hover
@@ -168,6 +228,14 @@ $p_zero: 0;
           transition: all 0.5s;
           position: relative;
           overflow: hidden;
+
+          @media (max-width: 768px) {
+            padding: 0.5rem 1.5rem; // Smaller padding for tablets
+          }
+
+          @media (max-width: 480px) {
+            padding: 0.4rem 1rem; // Smaller padding for mobile
+          }
 
           &::before {
             content: "";
@@ -204,6 +272,14 @@ $p_zero: 0;
           color: $dark-text;
           font-size: 1.5rem;
           transition: all 0.3s ease;
+
+          @media (max-width: 768px) {
+            font-size: 1.2rem; // Smaller icon size for tablets
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1rem; // Smaller icon size for mobile
+          }
 
           &:hover {
             transform: translateY(-5px); // Lift effect on hover
@@ -253,6 +329,18 @@ $p_zero: 0;
       box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
       transition: all 0.3s ease;
 
+      @media (max-width: 768px) {
+        width: 30px; // Smaller arrow size for tablets
+        height: 30px;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 480px) {
+        width: 25px; // Smaller arrow size for mobile
+        height: 25px;
+        font-size: 1rem;
+      }
+
       &.prev {
         left: 10px;
       }
@@ -290,70 +378,6 @@ $p_zero: 0;
       }
     }
   }
-
-  // Media Queries for Responsiveness
-  @media (min-width: 768px) {
-    > h2 {
-      font-size: 3rem;
-    }
-
-    > section {
-      padding: 4rem;
-
-      .workItem {
-        flex-direction: row;
-        height: 300px;
-
-        .image-container {
-          width: 40%;
-          height: 100%;
-          margin-bottom: 0;
-          margin-right: 2rem;
-
-          > img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        > aside {
-          width: 60%;
-          align-items: flex-start;
-          text-align: left;
-
-          > h3 {
-            font-size: 2rem;
-          }
-
-          > p {
-            font-size: 1.1rem;
-          }
-        }
-      }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    > h2 {
-      font-size: 3.5rem;
-    }
-
-    > section {
-      .workItem {
-        height: 350px;
-
-        > aside {
-          > h3 {
-            font-size: 2.5rem;
-          }
-
-          > p {
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
-  }
 }
 
 // Keyframes for animations
@@ -386,4 +410,4 @@ $p_zero: 0;
     opacity: 1;
     transform: translateY(0);
   }
-} 
+}
