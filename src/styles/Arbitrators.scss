@@ -1,0 +1,497 @@
+// Variables
+$primary-color: #1a3e72;
+$secondary-color: #8b0000;
+$accent-color: #d4a76a;
+$light-color: #f8f5f0;
+$dark-color: #333333;
+$text-color: #444444;
+$light-gray: #e9e9e9;
+
+// Mixins
+@mixin card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@mixin transition($property) {
+  transition: $property 0.3s ease;
+}
+
+// Base Styles
+.arbitrators-page {
+  font-family: 'Lato', sans-serif;
+  color: $text-color;
+  line-height: 1.6;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: $primary-color;
+  }
+
+  button {
+    cursor: pointer;
+    @include transition(all);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .primary-btn {
+    background: $primary-color;
+    color: white;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+
+  .secondary-btn {
+    background: white;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background: $light-color;
+    }
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Hero Section
+.arbitrators-hero {
+  background: linear-gradient(rgba(26, 62, 114, 0.9), rgba(26, 62, 114, 0.9)), url('../assets//lawyer_1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+
+  h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    button {
+      min-width: 200px;
+    }
+  }
+}
+
+// Intro Section
+.arbitrators-intro {
+  padding: 80px 0;
+  background: $light-color;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .intro-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    @include card-shadow;
+    text-align: center;
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    p {
+      color: lighten($text-color, 10%);
+    }
+  }
+}
+
+// Arbitrators List
+.arbitrators-list {
+  padding: 80px 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+  }
+
+  .section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+  }
+
+  .arbitrators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .arbitrator-card {
+    display: flex;
+    background: white;
+    @include card-shadow;
+    border-radius: 8px;
+    overflow: hidden;
+    @include transition(box-shadow);
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .arbitrator-image {
+    flex: 0 0 150px;
+    position: relative;
+    
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($primary-color, 0.3);
+        opacity: 0;
+        @include transition(opacity);
+      }
+      
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .arbitrator-details {
+    flex: 1;
+    padding: 25px;
+
+    h3 {
+      margin-bottom: 5px;
+      font-size: 1.4rem;
+      
+      a {
+        color: $primary-color;
+        
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+
+    .title {
+      color: $secondary-color;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .experience {
+      color: lighten($text-color, 20%);
+      font-style: italic;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    .specialties {
+      margin: 20px 0;
+
+      h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+        color: $primary-color;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 5px;
+
+          &:before {
+            content: "•";
+            color: $accent-color;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      margin: 20px 0;
+    }
+
+    .arbitrator-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      .profile-btn {
+        background: transparent;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+
+        &:hover {
+          background: rgba($primary-color, 0.1);
+        }
+      }
+
+      .select-btn {
+        background: $accent-color;
+        color: white;
+
+        &:hover {
+          background: darken($accent-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Process Section
+.arbitration-process {
+  padding: 80px 0;
+  background: $light-color;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .process-step {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    @include card-shadow;
+    text-align: center;
+    position: relative;
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: $primary-color;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: lighten($text-color, 10%);
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// CTA Section
+.arbitration-cta {
+  padding: 80px 0;
+  background: $primary-color;
+  color: white;
+  text-align: center;
+
+  h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    button {
+      min-width: 200px;
+    }
+
+    .cta-primary {
+      background: white;
+      color: $primary-color;
+
+      &:hover {
+        background: $light-gray;
+      }
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+
+      &:hover {
+        background: rgba(white, 0.1);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .arbitrators-hero {
+    padding: 80px 0;
+
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+
+  .arbitrators-list {
+    .arbitrators-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .arbitrator-card {
+      flex-direction: column;
+    }
+
+    .arbitrator-image {
+      flex: 0 0 250px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .arbitrators-hero {
+    padding: 60px 0;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .arbitration-process {
+    .process-steps {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .arbitration-cta {
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .arbitrators-hero {
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .arbitrators-list {
+    .arbitrator-details {
+      .arbitrator-actions {
+        flex-direction: column;
+      }
+    }
+  }
+}
